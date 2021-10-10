@@ -1,0 +1,68 @@
+﻿@inject EmployeeData _employeeData;
+<!DOCTYPE html>
+<html class="h-100 bg-white">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/_assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/_assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/_assets/css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="~/_assets/css/bootstrap-select.min.css" />
+    <script src="~/_assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/_assets/js/jquery-3.6.0.min.js"></script>
+    <script src="~/_assets/js/bootstrap-select.min.js"></script>
+    <style>
+        .tab-head {
+            color: gray;
+            text-decoration: none;
+        }
+
+            .tab-head.active {
+                color: black
+            }
+
+            .tab-head:hover {
+                color: black;
+            }
+    </style>
+
+</head>
+<body class="d-flex flex-column h-100">
+    <header>
+        <partial name="_LoginedUser" />
+    </header>
+
+    <main class="flex-shrink-0">
+        <div class="container-fluid p-5">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+        <div class="container text-center">
+            <span class="text-white">Place sticky footer content here.</span>
+        </div>
+    </footer>
+
+    <div class="toast-container" style="position: absolute; top: 60px; right: 2px;">
+        <div class="toast bg-primary" id="xd">
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    </div>
+    <script src="~/_assets/js/signalr.min.js"></script>
+    <script src="~/_assets/js/online-admin-hub.js"></script>
+    <script src="~/_assets/js/comma-numbers.js"></script>
+    <script src="~/_assets/js/tableExport.min.js"></script>
+    <script src="~/_assets/js/jspdf.min.js"></script>
+    <script src="~/_assets/js/jspdf.plugin.autotable.js"></script>
+    <script src="~/_assets/js/bootstrap-table.min.js"></script>
+    <script src="~/_assets/js/bootstrap-table-export.min.js"></script>
+    <script src="~/_assets/js/locale/bootstrap-table-tr-TR.min.js"></script>
+
+</body>
+</html>
+
+

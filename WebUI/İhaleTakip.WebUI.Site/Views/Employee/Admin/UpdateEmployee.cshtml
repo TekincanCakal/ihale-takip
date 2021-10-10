@@ -1,0 +1,36 @@
+﻿@using İhaleTakip.Model
+@model Employee
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="/Employee/UpdateEmployee" method="post">
+            <div class="mb-3 text-center border-bottom">
+                <h3>Personel Kaydı Güncelleme</h3>
+            </div>
+            <div style="display:none">
+                <input class="form-control" name="Id" type="text" value="@ViewBag.SelectedEmployee.Id" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ad</label>
+                <input class="form-control" name="Name" type="text" value="@ViewBag.SelectedEmployee.Name" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Soyad</label>
+                <input class="form-control" name="Surname" type="text" value="@ViewBag.SelectedEmployee.Surname" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Kullanıcı Adı</label>
+                <input class="form-control" name="Username" type="text" value="@ViewBag.SelectedEmployee.Username" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Şifre</label>
+                <input class="form-control" name="Password" type="text" value="@ViewBag.SelectedEmployee.Password" required />
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary w-100">Güncelle</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>

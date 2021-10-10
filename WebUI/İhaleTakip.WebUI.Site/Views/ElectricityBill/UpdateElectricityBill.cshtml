@@ -1,0 +1,37 @@
+﻿@using İhaleTakip.Model
+@model ElectricityBill
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="/ElectricityBill/UpdateElectricityBill" method="post">
+            <div class="mb-3 text-center border-bottom">
+                <h3>Elektrik Faturası Kaydı Güncelleme</h3>
+            </div>
+            <div style="display:none">
+                <input class="form-control" name="Id" type="text" value="@ViewBag.SelectedElectricityBill.Id" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dönem</label>
+                <input class="form-control" name="Period" type="month" value='@ViewBag.SelectedElectricityBill.Period.Year-@(ViewBag.SelectedElectricityBill.Period.Month <= 9 ? "0" + @ViewBag.SelectedElectricityBill.Period.Month : @ViewBag.SelectedElectricityBill.Period.Month)' readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tesisat Numarası</label>
+                <input class="form-control" name="InstallationNumber" type="text" value="@ViewBag.SelectedElectricityBill.InstallationNumber" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Harcanan Miktarı</label>
+                <input class="form-control comma-numbers" name="Amount" type="text" value="@ViewBag.SelectedElectricityBill.Amount" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Borç</label>
+                <input class="form-control comma-numbers" name="Debt" type="text" value="@ViewBag.SelectedElectricityBill.Debt" required />
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary w-100">Güncelle</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+

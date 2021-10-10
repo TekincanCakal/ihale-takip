@@ -1,0 +1,30 @@
+﻿<div class="d-flex bg-light text-white text-center" style="background-color: #f5f7fa;">
+    <div class="col-sm-6 col-md-2 px-3 py-5 border">
+        <a class="tab-head @(ViewContext.RouteData.Values["controller"].ToString() == " " ? "active" : "")" href="@Url.Action("Index", "ElectricitySubscriber")">
+            <i class="fa fa-3x fa-user" aria-hidden="true"></i>
+            <br />
+            <span class="h5">Abonelikler</span>
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-2 px-3 py-5 border">
+        <a class="tab-head @(ViewContext.RouteData.Values["controller"].ToString() == "ElectricitySubscriptionType" ? "active" : "")" href="@Url.Action("Index", "ElectricitySubscriptionType")">
+            <i class="fa fa-3x fa-users" aria-hidden="true"></i>
+            <br />
+            <span class="h5">Abonelik Türleri</span>
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-2 px-3 py-5 border">
+        <a class="tab-head @(ViewContext.RouteData.Values["controller"].ToString() == "ElectricityUnitPrice" ? "active" : "")" href="@Url.Action("Index", "ElectricityUnitPrice")">
+            <i class="fa fa-3x fa-try" aria-hidden="true"></i>
+            <br />
+            <span class="h5">Birim Fiyatlar</span>
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-2 px-3 py-5 border">
+        <a class="tab-head @(ViewContext.RouteData.Values["controller"].ToString() == "ElectricityTenderReport" ? "active" : "")" href="@Url.Action("Index", "ElectricityTenderReport")">
+            <i class="fa fa-3x fa-flag" aria-hidden="true"></i>
+            <br />
+            <span class="h5">Rapor</span>
+        </a>
+    </div>
+</div>

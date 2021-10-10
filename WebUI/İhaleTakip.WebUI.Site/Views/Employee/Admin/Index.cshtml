@@ -1,0 +1,44 @@
+﻿@using İhaleTakip.Model
+
+<div class="row py-3">
+    <div class="col-6">
+        <a class="btn btn-primary w-100" href="@Url.Action("AddEmployee", "Employee")">Yeni Personel Ekle</a>
+    </div>
+    <div class="col-6">
+        <input class="form-control" id="search" type="text" placeholder="Ara" />
+    </div>
+</div>
+<table id="table"
+       data-toggle="table"
+       data-search="true"
+       data-search-on-enter-key="false"
+       data-sort-order="asc"
+       data-pagination="true"
+       data-page-list="[10, 25, 50, 100, all]"
+       data-search-selector="#search">
+    <thead>
+        <tr>
+            <th class="text-center" data-sortable="true">Ad</th>
+            <th class="text-center">Soyad</th>
+            <th class="text-center">Kullanıcı Adı</th>
+            <th class="text-center">Şifre</th>
+            <th class="text-center">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Employee employee in ViewBag.Employees)
+        {
+            <tr>
+                <td>@employee.Name</td>
+                <td>@employee.Surname</td>
+                <td>@employee.Username</td>
+                <td>@employee.Password</td>
+                <td>
+                    <a class="btn btn-sm btn-warning text-white" href="@Url.Action("UpdateEmployee", "Employee", new { Id=employee.Id})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("DeleteEmployee", "Employee", new { Id=employee.Id})" onclick="return confirm('Silme İşlemini Onaylıyor Musun?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

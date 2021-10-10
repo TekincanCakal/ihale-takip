@@ -1,0 +1,38 @@
+﻿@using İhaleTakip.Model
+@model ElectricityUnitPrice
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="/ElectricityUnitPrice/AddElectricityUnitPrice" method="post">
+            <div class="mb-3 text-center border-bottom">
+                <h3>Birim Fiyat Kaydı</h3>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ad</label>
+                <select class="form-select" name="SubscriptionTypeId" required>
+                    @foreach (ElectricitySubscriptionType electricitySubscriptionType in ViewBag.SubscriptionTypes)
+                    {
+                        <option value="@electricitySubscriptionType.Id">@electricitySubscriptionType.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dönem</label>
+                <input class="form-control" name="Period" type="month" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tek Zamanlı Enerji Bedeli</label>
+                <input class="form-control comma-numbers" name="OneTimeEnergyCost" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dağıtım Bedeli</label>
+                <input class="form-control comma-numbers" name="DistributionCost" required />
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary w-100">Ekle</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>

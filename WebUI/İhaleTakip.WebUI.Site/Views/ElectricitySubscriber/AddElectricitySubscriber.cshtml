@@ -1,0 +1,62 @@
+﻿@using İhaleTakip.Model
+@model ElectricitySubscriber
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="/ElectricitySubscriber/AddElectricitySubscriber" method="post">
+            <div class="mb-3 text-center border-bottom">
+                <h3>Yeni Elektrik Aboneliği Kaydı</h3>
+            </div>
+            <div style="display:none">
+                <input class="form-control" name="year" value="@ViewBag.Year" />
+                <input class="form-control" name="month" value="@ViewBag.Month" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tesisat Numarası</label>
+                <input class="form-control" name="InstallationNumber" type="number" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sözleşme Numarası</label>
+                <input class="form-control" name="ContractNumber" type="number" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Abone Türü</label>
+                <select class="form-control" name="SubscriptionTypeId" id="AddSubscriptionTypeId" required>
+                    @foreach (ElectricitySubscriptionType electricitySubscriptionType in ViewBag.SubscriptionTypes)
+                    {
+                        <option value="@electricitySubscriptionType.Id">@electricitySubscriptionType.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Firma</label>
+                <select class="form-control" name="CompanyId" id="AddCompanies" required>
+                    @foreach (ElectricityCompany company in ViewBag.Companies)
+                    {
+                        <option value="@company.Id">@company.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Yer</label>
+                <input class="form-control" name="Address" type="text" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Abone Durumu</label>
+                <select class="form-select" name="SubscriberStatus" required>
+                    <option value="On">Açık</option>
+                    <option value="Off">Kapalı</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ekstra Bilgi</label>
+                <input class="form-control" name="ExtraInformation" type="text" />
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary w-100">Ekle</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>

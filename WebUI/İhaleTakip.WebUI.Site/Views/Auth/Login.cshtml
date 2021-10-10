@@ -1,0 +1,32 @@
+﻿@model LoginModel
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="@Url.Action("Login", "Auth")" method="post" id="LoginForm">
+            <div class="mb-3 text-center">
+                <img style="width: 200px" src="~/_assets/images/logo.png" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Kullanıcı Adı</label>
+                <input class="form-control" name="Username" type="text" value="@Model.Username" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Şifre</label>
+                <input class="form-control" name="Password" type="password" required />
+            </div>
+
+            <div class="mb-3">
+                <button class="w-100 btn btn-lg btn-primary">Giriş Yap</button>
+            </div>
+
+            @if (ViewBag.LoginFailed)
+            {
+                <div class="alert alert-danger mt-3" role="alert">
+                    Kullanıcı Adı Veya Şifre Hatalı
+                </div>
+            }
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>

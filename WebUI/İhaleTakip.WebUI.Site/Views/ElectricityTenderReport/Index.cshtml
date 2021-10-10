@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <div class="col-4"></div>
+    <dic class="col-4 text-center">
+        <form id="ReportForm" onsubmit="CreateReport(); return false;">
+            <div class="mb-3 text-center border-bottom">
+                <h3>Yeni Rapor Oluşturma</h3>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">İhale Limiti</label>
+                <input class="form-control" type="number" id="TenderLimit" min="0" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dönem Başlangıcı</label>
+                <input class="form-control" type="month" id="StartDate" onchange="ChangeInput()" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dönem Bitişi</label>
+                <input class="form-control" type="month" id="EndDate" required />
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary w-100">Raporu Oluştur</button>
+            </div>
+        </form>
+    </dic>
+    <div class="col-4"></div>
+</div>
+
+<script>
+    function CreateReport() {
+        let tenderLimit = $('#TenderLimit').val()
+        let startYear = parseInt($('#StartDate').val().split("-")[0]);
+        let startMonth = parseInt($('#StartDate').val().split("-")[1]);
+        let endYear = parseInt($('#EndDate').val().split("-")[0]);
+        let endMonth = parseInt($('#EndDate').val().split("-")[1]);
+        window.location = '@Url.Action("CreateTenderReport", "ElectricityTenderReport")?TenderLimit=' + tenderLimit + '&StartYear=' + startYear + '&StartMonth=' + startMonth + '&EndYear=' + endYear + '&EndMonth=' + endMonth;
+    }
+    function ChangeInput() {
+        document.querySelector("#EndDate").min = $("#StartDate").val();
+    }
+</script>

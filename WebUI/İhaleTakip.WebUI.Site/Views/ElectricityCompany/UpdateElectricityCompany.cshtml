@@ -1,0 +1,33 @@
+﻿@using İhaleTakip.Model
+@model ElectricityCompany
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="/ElectricityCompany/UpdateElectricityCompany" method="post">
+            <div class="mb-3 text-center border-bottom">
+                <h3>Firma Kaydı Güncelleme</h3>
+            </div>
+            <div class="mb-3" style="display:none">
+                <input class="form-control" name="Id" type="text" value="@ViewBag.SelectedCompany.Id" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ad</label>
+                <input class="form-control" name="Name" type="text" value="@ViewBag.SelectedCompany.Name" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Vergi Numarası</label>
+                <input class="form-control" name="TaxNumber" type="text" value="@ViewBag.SelectedCompany.TaxNumber" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Vergi Dairesi</label>
+                <input class="form-control" name="TaxAdministration" type="text" value="@ViewBag.SelectedCompany.TaxAdministration" required />
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary w-100">Güncelle</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+

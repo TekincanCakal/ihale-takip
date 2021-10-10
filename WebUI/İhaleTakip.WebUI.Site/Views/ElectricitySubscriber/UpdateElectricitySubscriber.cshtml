@@ -1,0 +1,96 @@
+﻿@using İhaleTakip.Model
+@model ElectricitySubscriber
+
+<script>
+    $(document).ready(function () {
+        $('#EditSubscriptionTypeId').attr("data-live-search", "true")
+        $('#EditSubscriptionTypeId').selectpicker();
+
+        $('#EditCompanies').attr("data-live-search", "true")
+        $('#EditCompanies').selectpicker();
+    });
+</script>
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="/ElectricitySubscriber/UpdateElectricitySubscriber" method="post">
+            <div class="mb-3 text-center border-bottom">
+                <h3>Elektrik Aboneliği Kaydı Güncelleme</h3>
+            </div>
+            <div style="display:none">
+                <input class="form-control" name="year" type="text" value="@ViewBag.Year" />
+                <input class="form-control" name="month" type="text" value="@ViewBag.Month" />
+                <input class="form-control" name="Id" type="text" value="@ViewBag.SelectedElectricitySubscriber.Item1.Id" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tesisat Numarası</label>
+                <input class="form-control" name="InstallationNumber" type="text" value="@ViewBag.SelectedElectricitySubscriber.Item1.InstallationNumber" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sözleşme Numarası</label>
+                <input class="form-control" name="ContractNumber" type="number" value="@ViewBag.SelectedElectricitySubscriber.Item1.ContractNumber" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Abone Türü</label>
+                <select class="form-control" name="SubscriptionTypeId" id="EditSubscriptionTypeId" required>
+                    @foreach (ElectricitySubscriptionType electricitySubscriptionType in ViewBag.SubscriptionTypes)
+                    {
+                        if (electricitySubscriptionType.Id == ViewBag.SelectedElectricitySubscriber.Item1.SubscriptionTypeId)
+                        {
+                            <option value="@electricitySubscriptionType.Id" selected>@electricitySubscriptionType.Name</option>
+                        }
+                        else
+                        {
+                            <option value="@electricitySubscriptionType.Id">@electricitySubscriptionType.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Firma</label>
+                <select class="form-control" name="CompanyId" id="EditCompanies" required>
+                    @foreach (ElectricityCompany company in ViewBag.Companies)
+                    {
+                        if (company.Id == ViewBag.SelectedElectricitySubscriber.Item1.CompanyId)
+                        {
+                            <option value="@company.Id" selected>@company.Name</option>
+                        }
+                        else
+                        {
+                            <option value="@company.Id">@company.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Yer</label>
+                <input class="form-control" name="Address" type="text" value="@ViewBag.SelectedElectricitySubscriber.Item1.Address" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Abone Durumu</label>
+                <select class="form-select" name="SubscriberStatus" required>
+                    @if (ViewBag.SelectedElectricitySubscriber.Item1.SubscriberStatus == "On")
+                    {
+                        <option value="On" selected>Açık</option>
+                        <option value="Off" >Kapalı</option>
+                    }
+                    else
+                    {
+                        <option value="On" >Açık</option>
+                        <option value="Off" selected>Kapalı</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ekstra Bilgi</label>
+                <input class="form-control" name="ExtraInformation" type="text" value="@ViewBag.SelectedElectricitySubscriber.Item1.ExtraInformation" />
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary w-100">Güncelle</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+

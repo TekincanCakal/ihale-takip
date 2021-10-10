@@ -1,0 +1,221 @@
+﻿<style>
+    .fatura-dropdown.hidden {
+        display: none;
+    }
+</style>
+
+<script>
+    function clickFaturaBox(box, id) {
+        let element = document.getElementById(id);
+        if (element.classList.contains("hidden")) {
+            element.classList.remove("hidden");
+            box.classList.remove("bg-success");
+            box.classList.add("bg-danger");
+            box.innerHTML = '\n                        <span class="text-white">Faturaları Gizle</span>\n                    ';
+        }
+        else {
+            element.classList.add("hidden");
+            box.classList.add("bg-success");
+            box.classList.remove("bg-danger");
+            box.innerHTML = '\n                        <span class="text-white">Faturaları Göster</span>\n                    ';
+        }
+    }
+    function filtrele() {
+        let filtre1 = document.getElementById("type1").value;
+        let filtre2 = document.getElementById("type2").value;
+        document.querySelectorAll(".subscriber").forEach(x => {
+            x.style.display = 'none';
+            if (filtre1 === "Borç") {
+                let borçDurumu = x.querySelector(".Borç").textContent.trim().replace(" ", "");
+                if (filtre2 === borçDurumu) {
+                    x.style.display = '';
+                }
+            }
+            else if (filtre1 === "BirimFiyat") {
+                let birimFiyatDurumu = x.querySelector(".BirimFiyat").textContent.trim().replace(" ", "");
+                if (filtre2 === birimFiyatDurumu) {
+                    x.style.display = '';
+                }
+            }
+        });
+    }
+    function filtreTemeizle() {
+        document.querySelectorAll(".subscriber").forEach(x => {
+            x.style.display = '';
+        });
+    }
+    function dışarıAktar() {
+        alert("Yapım Aşamasında");
+    }
+</script>
+
+<div class="row">
+    <div class="col-2 pb-3">
+        <select class="form-select" id="type1">
+            <option value="BirimFiyat" selected>Birim Fiyat</option>
+            <option value="Borç">Borç</option>
+        </select>
+    </div>
+    <div class="col-2 pb-3">
+        <select class="form-select" id="type2">
+            <option value="DoğrudanTemin" selected>Doğrudan Temin</option>
+            <option value="İhale">İhale</option>
+        </select>
+    </div>
+    <div class="col-1 pb-3">
+        <button class="btn btn-primary w-100" onclick="filtrele()">Filtrele</button>
+    </div>
+    <div class="col-1 pb-3">
+        <button class="btn btn-danger w-100" onclick="filtreTemeizle()">Filtreyi Kaldır</button>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-2">
+        <button class="btn btn-primary w-100" onclick="dışarıAktar()">Dışarı Aktar</button>
+    </div>
+</div>
+<div class="row text-center border border-dark">
+    <div class="col">
+        <div class="row fw-bold border-bottom border-dark">
+            <div class="col-2 border-end border-dark">
+                <span>İşlemler</span>
+            </div>
+            <div class="col-2 border-end border-dark">
+                <span>Tesisat Numarası</span>
+            </div>
+            <div class="col-4 border-end border-dark">
+                <div class="row border-bottom border-dark">
+                    <div class="col">
+                        <span>Borç Üzerinden İhale Durumu</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col border-end border-dark">
+                        <span>Fatura Sayısı</span>
+                    </div>
+                    <div class="col">
+                        <span>Tüketim Miktarı</span>
+                    </div>
+                    <div class="col border-start border-dark">
+                        <span>İhale Durumu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row border-bottom border-dark">
+                    <div class="col">
+                        <span>Birim Fiyat Üzerinden İhale Durumu</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col border-end border-dark">
+                        <span>Fatura Sayısı</span>
+                    </div>
+                    <div class="col">
+                        <span>Tüketim Miktarı</span>
+                    </div>
+                    <div class="col border-start border-dark">
+                        <span>İhale Durumu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @foreach (dynamic subscriber in ViewBag.Subsribers)
+        {
+            <div class="row border-dark subscriber">
+                <div class="col-2 border-end border-dark bg-success" style="cursor:pointer;" onclick="clickFaturaBox(this,  @subscriber.InstallationNumber)">
+                    <span class="text-white">Faturaları Göster</span>
+                </div>
+                <div class="col-2 border-end border-dark">
+                    <span>@subscriber.InstallationNumber</span>
+                </div>
+                <div class="col-4 border-end border-dark">
+                    <div class="row">
+                        <div class="col border-end border-dark">
+                            <span>@subscriber.BorçÜzerindenİhaleDurumu.HesabaKatılanFaturaSayısı</span>
+                        </div>
+                        <div class="col border-end border-dark">
+                            <span> @subscriber.BorçÜzerindenİhaleDurumu.ToplamTüketimMiktarı</span>
+                        </div>
+                        <div class="col">
+                            <span class="Borç"> @subscriber.BorçÜzerindenİhaleDurumu.İhaleDurumu</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col border-end border-dark">
+                            <span>@subscriber.BirimFiyatÜzerindenİhaleDurumu.HesabaKatılanFaturaSayısı</span>
+                        </div>
+                        <div class="col border-end border-dark">
+                            <span> @subscriber.BirimFiyatÜzerindenİhaleDurumu.ToplamTüketimMiktarı</span>
+                        </div>
+                        <div class="col">
+                            <span class="BirimFiyat"> @subscriber.BirimFiyatÜzerindenİhaleDurumu.İhaleDurumu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row fatura-dropdown bg-warning hidden" id="@subscriber.InstallationNumber">
+                <div class="col">
+                    <div class="row fw-bold border-top border-dark">
+                        <div class="col-2 border-end border-dark">
+                            <span>Dönem</span>
+                        </div>
+                        <div class="col-2 border-end border-dark">
+                            <span>Borç</span>
+                        </div>
+                        <div class="col-2 border-end border-dark">
+                            <span>Birim Fiyat</span>
+                        </div>
+                        <div class="col-2 border-end border-dark">
+                            <span>Birim Fiyat Üzerinden Hesaplanmış Borç</span>
+                        </div>
+                        <div class="col-2 border-end border-dark">
+                            <span>Birim Fiyat Üzerinden İhale Durumu</span>
+                        </div>
+                        <div class="col-2">
+                            <span>Borç Üzerinden İhale Durumu</span>
+                        </div>
+                    </div>
+                    @foreach (dynamic bill in subscriber.Faturalar)
+                    {
+                        <div class="row border-top border-dark">
+                            <div class="col-2 border-end border-dark">
+                                <span>@bill.Dönem</span>
+                            </div>
+                            <div class="col-2 border-end border-dark">
+                                <span>@bill.Borç</span>
+                            </div>
+                            <div class="col-2 border-end border-dark">
+                                <span>@bill.BirimFiyat</span>
+                            </div>
+                            <div class="col-2 border-end border-dark">
+                                <span>@bill.BirimFiyatÜzerindenHesaplanmışBorç</span>
+                            </div>
+                            <div class="col-2 border-end border-dark">
+                                @if (bill.BirimFiyatÜzerindenHesaplamayaKatıldıMı)
+                                {
+                                    <span class="text-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                                }
+                                else
+                                {
+                                    <span class="text-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                                }
+                            </div>
+                            <div class="col-2">
+                                @if (bill.BorçÜzerindenHesaplamayaKatıldıMı)
+                                {
+                                    <span class="text-success"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
+                                }
+                                else
+                                {
+                                    <span class="text-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

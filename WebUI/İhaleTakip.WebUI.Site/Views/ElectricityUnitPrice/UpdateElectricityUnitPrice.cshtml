@@ -1,0 +1,30 @@
+﻿@using İhaleTakip.Model
+@model ElectricityUnitPrice
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form action="/ElectricityUnitPrice/UpdateElectricityUnitPrice" method="post">
+            <div class="mb-3 text-center border-bottom">
+                <h3>Birim Fiyat Kaydı Güncelleme</h3>
+            </div>
+            <div style="display:none">
+                <input class="form-control" name="Id" type="text" value="@ViewBag.SelectedUnitPrice.Id" readonly />
+                <input class="form-control" name="SubscriptionTypeId" type="text" value="@ViewBag.SelectedUnitPrice.SubscriptionTypeId" readonly />
+                <input class="form-control" name="Period" type="text" value='@ViewBag.SelectedUnitPrice.Period.Year + "-" + @ViewBag.SelectedUnitPrice.Period.Month' readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tek Zamanlı Enerji Bedeli</label>
+                <input class="form-control comma-numbers" name="OneTimeEnergyCost" type="text" value="@ViewBag.SelectedUnitPrice.OneTimeEnergyCost" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dağıtım Bedeli</label>
+                <input class="form-control comma-numbers" name="DistributionCost" type="text" value="@ViewBag.SelectedUnitPrice.DistributionCost" required />
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary w-100">Güncelle</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>

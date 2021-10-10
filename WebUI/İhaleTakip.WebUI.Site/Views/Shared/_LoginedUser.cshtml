@@ -1,0 +1,82 @@
+﻿@inject UserManager userManager;
+@inject ServiceManager serviceManager;
+
+@if (userManager.IsCurrentUserLogined())
+{
+    bool IsServiceLogin = userManager.IsCurrentUserLoginService();
+    Employee employee = userManager.GetCurrentUser();
+    if (IsServiceLogin)
+    {
+        ServiceLoginModel serviceLoginModel = userManager.GetCurrentUserLoginService();
+        ServiceModel serviceModel = serviceManager.getService(serviceLoginModel.Service);
+        <div class="d-flex bg-dark text-white">
+            <div class="col-4 p-3">
+                <span class="h5">@employee.Name @employee.Surname (@serviceLoginModel.Perm.ToString()) Servis: @serviceLoginModel.Service.ToString()</span>
+            </div>
+            <div class="col-4">
+                <div class="row h-100">
+                    @foreach (ServiceModel service in ServiceManager.Services)
+                    {
+                        if (serviceLoginModel.Service != service.Name)
+                        {
+                            if (service.Enabled)
+                            {
+                                <div class="col text-center bg-success border border-dark p-3">
+                                    <a class="text-decoration-none text-light fw-bold" href="@Url.Action("LoginService", "Auth", new {serviceName = service.Name })">@service.TrName</a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col text-center bg-danger border border-dark p-3">
+                                    <a class="text-decoration-none text-light fw-bold">@service.TrName</a>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="col-3"></div>
+            <div class="col-1 text-end text-center bg-danger p-3">
+                <a class="text-white text-decoration-none fw-bold" href="@Url.Action("Logout", "Auth")">Çıkış</a>
+            </div>
+        </div>
+        if (serviceModel.MenuPartialViewName != null)
+        {
+            <partial name="@serviceModel.MenuPartialViewName" />
+        }
+    }
+    else
+    {
+        <div class="d-flex bg-dark text-white">
+            <div class="col-4 p-3">
+                <span class="h5">@employee.Name @employee.Surname</span>
+            </div>
+            <div class="col-4">
+                <div class="row h-100">
+                    @foreach (ServiceModel service in ServiceManager.Services)
+                    {
+                        @if (service.Enabled)
+                        {
+                            <div class="col text-center bg-success border border-dark p-3">
+                                <a class="text-decoration-none text-light fw-bold" href="@Url.Action("LoginService", "Auth", new {serviceName=service.Name })">@service.TrName</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col text-center bg-danger border border-dark p-3">
+                                <a class="text-decoration-none text-light fw-bold">@service.TrName</a>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="col-3"></div>
+            <div class="col-1 text-end text-center bg-danger p-3">
+                <a class="text-white text-decoration-none fw-bold" href="@Url.Action("Logout", "Auth")">Çıkış</a>
+            </div>
+        </div>
+    }
+}
+

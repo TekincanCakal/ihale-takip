@@ -1,0 +1,76 @@
+﻿@using İhaleTakip.Model
+@model ElectricityRate
+
+<form action="@Url.Action("UpdateElectricityRate", "ElectricityUnitPrice")" method="post">
+    <div class="row">
+        <div style="display:none">
+            <input name="Id" value="@ViewBag.Rate.Id" />
+        </div>
+        <div class="col-2">
+            <label class="form-label">Enerji Fonu</label>
+            <input class="form-control comma-numbers" type="text" name="EnergyFund" value="@ViewBag.Rate.EnergyFund" />
+        </div>
+        <div class="col-2">
+            <label class="form-label">TRT Payı</label>
+            <input class="form-control comma-numbers" type="text" name="TRTShare" value="@ViewBag.Rate.TRTShare" />
+        </div>
+        <div class="col-2">
+            <label class="form-label">Elektrik Tüketim Vergisi</label>
+            <input class="form-control comma-numbers" type="text" name="ElectricityConsumptionTax" value="@ViewBag.Rate.ElectricityConsumptionTax" />
+        </div>
+        <div class="col-2">
+            <label class="form-label">Kdv</label>
+            <input class="form-control comma-numbers" type="text" name="KDV" value="@ViewBag.Rate.KDV" />
+        </div>
+        <div class="col-4">
+            <label class="form-label" style="opacity:0%">&</label>
+            <button class="btn btn-primary w-100">Güncelle</button>
+        </div>
+    </div>
+</form>
+
+<div class="row py-3">
+    <div class="col-6">
+        <a class="btn btn-primary w-100" href="@Url.Action("AddElectricityUnitPrice", "ElectricityUnitPrice")">Yeni Birim Fiyat Ekle</a>
+    </div>
+    <div class="col-6">
+        <input class="form-control" id="search" type="text" placeholder="Ara" />
+    </div>
+</div>
+
+<table id="table"
+       data-toggle="table"
+       data-search="true"
+       data-search-on-enter-key="false"
+       data-sort-order="asc"
+       data-pagination="true"
+       data-page-list="[10, 25, 50, 100, all]"
+       data-search-selector="#search">
+    <thead>
+        <tr>
+            <th class="text-center" data-sortable="true">Abonelik Türü</th>
+            <th class="text-center">Dönem</th>
+            <th class="text-center">Tek Zamanlı Enerji Bedeli</th>
+            <th class="text-center">Dağıtım Bedeli</th>
+            <th class="text-center">Birim Fiyat</th>
+            <th class="text-center">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (dynamic obj in ViewBag.UnitPrices)
+        {
+            <tr>
+                <td>@obj.SubscriptionType.Name</td>
+                <td>@obj.UnitPrice.Period.Year / @obj.UnitPrice.Period.Month</td>
+                <td>@obj.UnitPrice.OneTimeEnergyCost</td>
+                <td>@obj.UnitPrice.DistributionCost</td>
+                <td>@obj.CalculatedUnitPrice</td>
+                <td>
+                    <a class="btn btn-sm btn-warning text-white" href="@Url.Action("UpdateElectricityUnitPrice", "ElectricityUnitPrice", new {Id=obj.UnitPrice.Id})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("DeleteElectricityUnitPrice", "ElectricityUnitPrice", new {Id=obj.UnitPrice.Id})" onclick="return confirm('Silme İşlemini Onaylıyor Musun?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

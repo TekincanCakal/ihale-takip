@@ -1,0 +1,106 @@
+﻿<div class="row py-3">
+    <div class="col-4">
+        <input class="form-control" onchange="onDateChange(this)" type="month" value="@ViewBag.DateText" />
+    </div>
+    <div class="col-4">
+        <a class="btn btn-primary w-100" href="@Url.Action("AddElectricitySubscriber", "ElectricitySubscriber", new { Year=ViewBag.Year, Month=ViewBag.Month})">Yeni Abonelik Ekle</a>
+    </div>
+    <div class="col-4">
+        <input class="form-control" id="search" type="text" placeholder="Ara" />
+    </div>
+</div>
+
+<table id="table"
+       data-toggle="table"
+       data-search="true"
+       data-search-on-enter-key="false"
+       data-pagination="true"
+       data-page-list="[10, 25, 50, 100, all]"
+       data-search-selector="#search">
+    <thead>
+        <tr>
+            <th class="text-center">Tesisat Numarası</th>
+            <th class="text-center">Sözleşme Numarası</th>
+            <th class="text-center" data-sortable="true">Abone Türü</th>
+            <th class="text-center">Birim Fiyat</th>
+            <th class="text-center">Harcanma Miktarı</th>
+            <th class="text-center">Fatura Borcu</th>
+            <th class="text-center">Hesaplanmış Borç</th>
+            <th class="text-center" data-sortable="true">Firma</th>
+            <th class="text-center">Adres</th>
+            <th class="text-center">Diğer Açıklamalar</th>
+            <th class="text-center">Abonelik İşlemleri</th>
+            <th class="text-center">Fatura İşlemleri</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (dynamic obj in ViewBag.Subscriptions)
+        {
+        <tr>
+            @if (@obj.Subscriber.SubscriberStatus == "On")
+            {
+                <td><i class="fa fa-circle text-success" aria-hidden="true"></i> @obj.Subscriber.InstallationNumber</td>
+            }
+            else
+            {
+                <td><i class="fa fa-circle text-danger" aria-hidden="true"></i> @obj.Subscriber.InstallationNumber</td>
+            }
+            <td>@obj.Subscriber.ContractNumber</td>
+            <td>@obj.SubscriptionType.Name</td>
+            @if (obj.CurrentUnitPrice != null)
+            {
+                <td>@obj.CurrentUnitPrice</td>
+            }
+            else
+            {
+                <td></td>
+            }
+            @if (obj.CurrentBill != null)
+            {
+                <td>@obj.CurrentBill.Amount</td>
+                <td>@obj.CurrentBill.Debt</td>
+            }
+            else
+            {
+                <td></td>
+                <td></td>
+            }
+            @if (obj.CurrentUnitPriceDebt != null)
+            {
+                <td>@obj.CurrentUnitPriceDebt</td>
+            }
+            else
+            {
+                <td></td>
+            }
+            <td>@obj.Company.Name</td>
+            <td>@obj.Subscriber.Address</td>
+            <td>@obj.Subscriber.ExtraInformation</td>
+            <td>
+                <a class="btn btn-sm btn-warning text-white" href="@Url.Action("UpdateElectricitySubscriber", "ElectricitySubscriber", new {Id=obj.Subscriber.Id, Year=ViewBag.Year, Month=ViewBag.Month})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                <a class="btn btn-sm btn-danger" href="@Url.Action("DeleteElectricitySubscriber", "ElectricitySubscriber", new {InstallationNumber=obj.Subscriber.InstallationNumber, Year=ViewBag.Year, Month=ViewBag.Month})" onclick="return confirm('Silme İşlemini Onaylıyor Musun?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+            <td>
+                @if (obj.CurrentBill != null)
+                {
+                    <a class="btn btn-sm btn-primary text-white" href="@Url.Action("UpdateElectricityBill", "ElectricityBill", new {Id=obj.CurrentBill.Id})"><i class="fa fa-file-text" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("DeleteElectricityBill", "ElectricityBill", new {Id=obj.CurrentBill.Id})" onclick="return confirm('Silme İşlemini Onaylıyor Musun?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                }
+                else
+                {
+                    <a class="btn btn-sm btn-success text-white" href="@Url.Action("AddElectricityBill", "ElectricityBill", new {InstallationNumber=obj.Subscriber.InstallationNumber, Year=ViewBag.Year, Month=ViewBag.Month})"><i class="fa fa-plus-square-o" aria-hidden="true"></i></a>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function onDateChange(element) {
+        let year = parseInt(element.value.split("-")[0]);
+        let month = parseInt(element.value.split("-")[1]);
+        window.location = '@Url.Action("Index", "ElectricitySubscriber")?Year=' + year + '&Month=' + month;
+    }
+</script>
+
