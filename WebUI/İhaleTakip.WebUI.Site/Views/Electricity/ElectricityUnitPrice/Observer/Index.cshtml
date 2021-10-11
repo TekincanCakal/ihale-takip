@@ -1,0 +1,61 @@
+﻿@using İhaleTakip.Model
+@model ElectricityRate
+
+<div class="row">
+    <div style="display:none">
+        <input name="Id" value="@ViewBag.Rate.Id" />
+    </div>
+    <div class="col-2">
+        <label class="form-label">Enerji Fonu</label>
+        <input class="form-control comma-numbers" type="text" name="EnergyFund" value="@ViewBag.Rate.EnergyFund" readonly/>
+    </div>
+    <div class="col-2">
+        <label class="form-label">TRT Payı</label>
+        <input class="form-control comma-numbers" type="text" name="TRTShare" value="@ViewBag.Rate.TRTShare" readonly/>
+    </div>
+    <div class="col-2">
+        <label class="form-label">Elektrik Tüketim Vergisi</label>
+        <input class="form-control comma-numbers" type="text" name="ElectricityConsumptionTax" value="@ViewBag.Rate.ElectricityConsumptionTax" readonly/>
+    </div>
+    <div class="col-2">
+        <label class="form-label">Kdv</label>
+        <input class="form-control comma-numbers" type="text" name="KDV" value="@ViewBag.Rate.KDV" readonly/>
+    </div>
+</div>
+<div class="row py-3">
+    <div class="col">
+        <input class="form-control" id="search" type="text" placeholder="Ara" />
+    </div>
+</div>
+
+<table id="table"
+       data-toggle="table"
+       data-search="true"
+       data-search-on-enter-key="false"
+       data-sort-order="asc"
+       data-pagination="true"
+       data-page-list="[10, 25, 50, 100, all]"
+       data-search-selector="#search">
+    <thead>
+        <tr>
+            <th class="text-center" data-sortable="true">Abonelik Türü</th>
+            <th class="text-center">Dönem</th>
+            <th class="text-center">Tek Zamanlı Enerji Bedeli</th>
+            <th class="text-center">Dağıtım Bedeli</th>
+            <th class="text-center">Birim Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (dynamic obj in ViewBag.UnitPrices)
+        {
+            <tr>
+                <td>@obj.SubscriptionType.Name</td>
+                <td>@obj.UnitPrice.Period.Year / @obj.UnitPrice.Period.Month</td>
+                <td>@obj.UnitPrice.OneTimeEnergyCost</td>
+                <td>@obj.UnitPrice.DistributionCost</td>
+                <td>@obj.CalculatedUnitPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

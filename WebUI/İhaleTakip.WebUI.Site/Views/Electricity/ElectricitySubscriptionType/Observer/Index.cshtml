@@ -1,0 +1,31 @@
+﻿@using İhaleTakip.Model
+
+<div class="row py-3">
+    <div class="col">
+        <input class="form-control" id="search" type="text" placeholder="Ara" />
+    </div>
+</div>
+
+
+<table id="table"
+       data-toggle="table"
+       data-search="true"
+       data-search-on-enter-key="false"
+       data-sort-order="asc"
+       data-pagination="true"
+       data-page-list="[10, 25, 50, 100, all]"
+       data-search-selector="#search">
+    <thead>
+        <tr>
+            <th class="text-center" data-sortable="true">Ad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ElectricitySubscriptionType electricitySubscriptionType in ViewBag.ElectricitySubscriptionTypes)
+        {
+            <tr>
+                <td>@electricitySubscriptionType.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

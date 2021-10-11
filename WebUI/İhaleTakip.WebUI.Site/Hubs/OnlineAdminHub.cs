@@ -1,25 +1,19 @@
-﻿using İhaleTakip.WebUI.Site.Managers;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.SignalR;
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace İhaleTakip.WebUI.Site.Hubs
+﻿namespace İhaleTakip.WebUI.Site.Hubs
 {
-    public class OnlineAdminUser
-    {
-        public string Username { get; set; }
-        public HashSet<string> ConnectionIds { get; set; }
-    }
+    using İhaleTakip.WebUI.Site.Managers;
+    using İhaleTakip.WebUI.Site.Models;
+    using İhaleTakip.WebUI.Site.Utils;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.SignalR;
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     public class OnlineAdminHub : Hub
     {
         private ServiceManager _serviceManager;
 
-        public static ConcurrentDictionary<string, OnlineAdminUser> ActiveUsers = new ConcurrentDictionary<string, OnlineAdminUser>();
+        public readonly static ConnectionMapping<string> ActiveUsers =new ConnectionMapping<string>();
 
         public OnlineAdminHub(ServiceManager serviceManager)
         {
@@ -31,26 +25,40 @@ namespace İhaleTakip.WebUI.Site.Hubs
             string username = Context.GetHttpContext().Session.GetString("Username");
             if(username != null)
             {
-                string connectionId = Context.ConnectionId;
-
-                OnlineAdminUser user;
-                ActiveUsers.TryGetValue(username, out user);
-
-                if (user != null)
+                ActiveUsers.Remove(username, Context.ConnectionId);
+                var Session = Context.GetHttpContext().Session;
+                var client = Clients;
+                Task.Delay(5000).ContinueWith(t =>
                 {
-                    lock (user.ConnectionIds)
+                    var connections = ActiveUsers.GetConnections(username);
+                    if (!connections.Any() && UserManager.LoginedUsers.Contains(username))
                     {
-                        user.ConnectionIds.RemoveWhere(cid => cid.Equals(connectionId));
-
-                        if (!user.ConnectionIds.Any())
+                        bool IsCurrentUserLoginService = (Session.GetString("Service") != null && Session.GetString("Perm") != null);
+                        if (IsCurrentUserLoginService)
                         {
-                            OnlineAdminUser removedUser;
-                            ActiveUsers.TryRemove(username, out removedUser);
+                            ServiceLoginModel oldStatus = new ServiceLoginModel
+                            {
+                                Service = (Service)Enum.Parse(typeof(Service), Session.GetString("Service")),
+                                Perm = (Perm)Enum.Parse(typeof(Perm), Session.GetString("Perm"))
+                            };
+                            if (oldStatus.Perm == Perm.Admin)
+                            {
+                                _serviceManager.SetServiceStatus(oldStatus.Service, false);
+                            }
+                            UserManager.ServiceLoginedUsers.Remove(username);
+                        }
+                        UserManager.LoginedUsers.Remove(username);
+                        foreach (var x in UserManager.LoginedUsers)
+                        {
+                            var tempConnections = ActiveUsers.GetConnections(x);
+
+                            foreach (var cid in tempConnections)
+                            {
+                                client.Client(cid).SendAsync("userLoginLogout", username, false);
+                            }
                         }
                     }
-                    ActiveUsers[username] = user;
-                }
-                _serviceManager.UpdateServiceStatus();
+                });
             }
             return base.OnDisconnectedAsync(exception);
         }
@@ -58,21 +66,9 @@ namespace İhaleTakip.WebUI.Site.Hubs
         public override Task OnConnectedAsync()
         {
             string username = Context.GetHttpContext().Session.GetString("Username");
-            if (username != null)
+            if(username != null)
             {
-                string connectionId = Context.ConnectionId;
-
-                var user = ActiveUsers.GetOrAdd(username, _ => new OnlineAdminUser
-                {
-                    Username = username,
-                    ConnectionIds = new HashSet<string>()
-                });
-
-                lock (user.ConnectionIds)
-                {
-                    user.ConnectionIds.Add(connectionId);
-                }
-                _serviceManager.UpdateServiceStatus();
+                ActiveUsers.Add(username, Context.ConnectionId);
             }
             return base.OnConnectedAsync();
         }

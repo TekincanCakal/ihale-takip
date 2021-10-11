@@ -23,3 +23,16 @@ C:\Users\Chasen\source\repos\İhaleTakip\İhaleTakip.Data\obj\Debug\netcoreapp3.
 C:\Users\Chasen\source\repos\İhaleTakip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.dll
 C:\Users\Chasen\source\repos\İhaleTakip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.pdb
 C:\Users\Chasen\source\repos\İhaleTakip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.csproj.CopyComplete
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\bin\Debug\netcoreapp3.1\İhaleTakip.Data.deps.json
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\bin\Debug\netcoreapp3.1\İhaleTakip.Data.dll
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\bin\Debug\netcoreapp3.1\İhaleTakip.Data.pdb
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\bin\Debug\netcoreapp3.1\İhaleTakip.Model.dll
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\bin\Debug\netcoreapp3.1\İhaleTakip.Model.pdb
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.csproj.AssemblyReference.cache
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.AssemblyInfoInputs.cache
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.AssemblyInfo.cs
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.csproj.CoreCompileInputs.cache
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.csproj.CopyComplete
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.dll
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.pdb

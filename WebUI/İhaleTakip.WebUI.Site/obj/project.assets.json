@@ -7879,19 +7879,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Chasen\\.nuget\\packages\\": {}
+    "C:\\Users\\yukse\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\WebUI\\İhaleTakip.WebUI.Site\\İhaleTakip.WebUI.Site.csproj",
+      "projectUniqueName": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\WebUI\\İhaleTakip.WebUI.Site\\İhaleTakip.WebUI.Site.csproj",
       "projectName": "İhaleTakip.WebUI.Site",
-      "projectPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\WebUI\\İhaleTakip.WebUI.Site\\İhaleTakip.WebUI.Site.csproj",
-      "packagesPath": "C:\\Users\\Chasen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\WebUI\\İhaleTakip.WebUI.Site\\obj\\",
+      "projectPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\WebUI\\İhaleTakip.WebUI.Site\\İhaleTakip.WebUI.Site.csproj",
+      "packagesPath": "C:\\Users\\yukse\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\WebUI\\İhaleTakip.WebUI.Site\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Chasen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yukse\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7905,11 +7905,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj": {
-              "projectPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj"
+            "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj": {
+              "projectPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj"
             },
-            "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj": {
-              "projectPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj"
+            "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj": {
+              "projectPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj"
             }
           }
         }

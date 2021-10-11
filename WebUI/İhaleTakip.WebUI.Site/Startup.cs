@@ -96,8 +96,10 @@ namespace İhaleTakip.WebUI.Site
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(name: "authlogin", template: "Giriş", defaults: new { controller = "Auth", action = "Login" });
-                routes.MapRoute(name: "authlogout", template: "Çıkış", defaults: new { controller = "Auth", action = "Logout" });
+                routes.MapRoute(name: "servicelogin", template: "ServisBaglan/{serviceName}", defaults: new { controller = "Auth", action = "LoginService" });
+
+                routes.MapRoute(name: "authlogin", template: "Giris", defaults: new { controller = "Auth", action = "Login" });
+                routes.MapRoute(name: "authlogout", template: "Cikis", defaults: new { controller = "Auth", action = "Logout" });
 
                 routes.MapRoute(name: "employee", template: "Personeller", defaults: new { controller = "Employee", action = "Index" });
                 routes.MapRoute(name: "employeeadd", template: "Personeller/Ekle", defaults: new { controller = "Employee", action = "AddEmployee" });

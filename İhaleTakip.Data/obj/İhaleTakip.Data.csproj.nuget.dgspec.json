@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj": {}
+    "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj": {
+    "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj",
+        "projectUniqueName": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj",
         "projectName": "İhaleTakip.Data",
-        "projectPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj",
-        "packagesPath": "C:\\Users\\Chasen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\obj\\",
+        "projectPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\İhaleTakip.Data.csproj",
+        "packagesPath": "C:\\Users\\yukse\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Chasen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yukse\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj": {
-                "projectPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj"
+              "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj": {
+                "projectPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj"
               }
             }
           }
@@ -76,17 +76,17 @@
         }
       }
     },
-    "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj": {
+    "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj",
+        "projectUniqueName": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj",
         "projectName": "İhaleTakip.Model",
-        "projectPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj",
-        "packagesPath": "C:\\Users\\Chasen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chasen\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\obj\\",
+        "projectPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\İhaleTakip.Model.csproj",
+        "packagesPath": "C:\\Users\\yukse\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yukse\\Documents\\GitHub\\ihale-takip\\İhaleTakip.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Chasen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yukse\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

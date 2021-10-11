@@ -1,4 +1,6 @@
 ﻿function createToast(userId, isLogin) {
+    let toastContainer = document.querySelector(".toast-container");
+
     let toast = document.createElement("div");
     toast.id = userId;
     toast.classList.add("toast");
@@ -11,9 +13,16 @@
 
     let toastBody = document.createElement("div");
     toastBody.classList.add("toast-body");
+    toastBody.classList.add("text-white");
     toast.appendChild(toastBody)
 
-    toastBody.innerText = "Hoşgeldin " + userId;
+    if (isLogin === true) {
+        toastBody.innerHTML = "<span class='fw-bold'>"+userId+"</span> Sisteme Giriş Yaptı.";
+    }
+    else {
+        toastBody.innerHTML = "<span class='fw-bold'>"+userId+"</span> Sistemden Çıkış Yaptı.";
+    }
+    
 
     toastContainer.appendChild(toast);
 
@@ -25,29 +34,29 @@
 
 
 
+let userLoginLogout = function (userId, isLogin){
+    createToast(userId, isLogin);
+}
 
 let updateService = function (message) {
-    //$("#ServiceStatus").html(message);
-    //createToast(message, true);
+    document.getElementById("ServiceStatus").innerHTML = message;
 };
 
-let userLogout = function (message) {
-    console.log("xd");
-    location.href = "/Çıkış";
-    
+let forceLoginLogout = function (message) {
+    location.href = "/Cikis";
 };
 
 function onConnectionError(error) {
     if (error && error.message) console.error(error.message);
 }
 
-let countConnection = new signalR.HubConnectionBuilder().withUrl('/onlineAdminHub').build();
-countConnection.on('updateService', updateService);
-countConnection.on('logOut', userLogout);
+let onlineAdminHubConnection = new signalR.HubConnectionBuilder().withUrl('/onlineAdminHub').build();
+onlineAdminHubConnection.on('updateService', updateService);
+onlineAdminHubConnection.on('userLoginLogout', userLoginLogout);
+onlineAdminHubConnection.on('forceLoginLogout', forceLoginLogout);
 
-
-countConnection.onclose(onConnectionError);
-countConnection.start()
+onlineAdminHubConnection.onclose(onConnectionError);
+onlineAdminHubConnection.start()
     .then(function () {
         console.log('Online Hub Connected');
     })

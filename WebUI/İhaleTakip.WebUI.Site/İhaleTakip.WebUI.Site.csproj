@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Electricity\ElectricitySubscriber\Admin\Index.cshtml" />
+  </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\_assets\css\" />
     <Folder Include="wwwroot\_assets\images\" />
@@ -10,7 +14,8 @@
     <Folder Include="wwwroot\_assets\sass\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\ElectricitySubscriber\Index.cshtml" />
+    <None Include="Views\Electricity\ElectricitySubscriber\Admin\Index.cshtml" />
+    <None Include="Views\Electricity\ElectricitySubscriber\Observer\Index.cshtml" />
     <None Include="Views\Eror\Index.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>

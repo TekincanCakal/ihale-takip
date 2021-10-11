@@ -1,15 +1,15 @@
-﻿using İhaleTakip.Data;
-using İhaleTakip.Model;
-using İhaleTakip.WebUI.Site.Hubs;
-using İhaleTakip.WebUI.Site.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.SignalR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace İhaleTakip.WebUI.Site.Managers
+﻿namespace İhaleTakip.WebUI.Site.Managers
 {
+    using İhaleTakip.Data;
+    using İhaleTakip.Model;
+    using İhaleTakip.WebUI.Site.Hubs;
+    using İhaleTakip.WebUI.Site.Models;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.SignalR;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public enum Perm
     {
         Admin, Observer
@@ -105,12 +105,11 @@ namespace İhaleTakip.WebUI.Site.Managers
             {
                 _session.SetString("Username", username);
                 LoginedUsers.Add(username);
+                OnUserLogin(username);
             }
             else
             {
-                LogoutUser(username);
-                _session.SetString("Username", username);
-                LoginedUsers.Add(username);
+                throw new Exception("Bu Hesaba Şuanda Birisi Bağlı Durumda");
             }
         }
         
@@ -129,6 +128,7 @@ namespace İhaleTakip.WebUI.Site.Managers
                     ServiceLoginedUsers.Remove(username);
                 }
                 LoginedUsers.Remove(username);
+                OnUserLogout(username);
             }
             else
             {
@@ -136,20 +136,32 @@ namespace İhaleTakip.WebUI.Site.Managers
             }
         }
 
-        public void LogoutUser(string username)
+        public void OnUserLogin(string username)
         {
-            OnlineAdminUser receiver;
-            if (OnlineAdminHub.ActiveUsers.TryGetValue(username, out receiver))
+            foreach (var x in LoginedUsers)
             {
-                IEnumerable<string> allReceivers;
-                lock (receiver.ConnectionIds)
+                if(x != username)
                 {
-                    allReceivers = receiver.ConnectionIds.Concat(receiver.ConnectionIds);
+                    var connections = OnlineAdminHub.ActiveUsers.GetConnections(x);
+                    foreach (var cid in connections)
+                    {
+                        _hubContext.Clients.Client(cid).SendAsync("userLoginLogout", username, true);
+                    }
                 }
+            }
+        }
 
-                foreach (var cid in allReceivers)
+        public void OnUserLogout(string username)
+        {
+            foreach (var x in LoginedUsers)
+            {
+                if (x != username)
                 {
-                    _hubContext.Clients.Client(cid).SendAsync("logOut", "");
+                    var connections = OnlineAdminHub.ActiveUsers.GetConnections(x);
+                    foreach (var cid in connections)
+                    {
+                        _hubContext.Clients.Client(cid).SendAsync("userLoginLogout", username, false);
+                    }
                 }
             }
         }
@@ -171,7 +183,21 @@ namespace İhaleTakip.WebUI.Site.Managers
                             ServiceLoginModel currentService = GetCurrentUserLoginService();
                             if (currentService.Service == service.Name)
                             {
-                                throw new Exception("Zaten Bu Servise Bağlısınız");
+                                if (!_serviceManager.GetServiceStatus(currentService.Service))
+                                {
+                                    _session.SetString("Service", service.Name.ToString());
+                                    ServiceLoginedUsers[username] = new ServiceLoginModel
+                                    {
+                                        Service = service.Name,
+                                        Perm = Perm.Admin
+                                    };
+                                    _serviceManager.SetServiceStatus(service.Name, true);
+                                    _session.SetString("Perm", Perm.Admin.ToString());
+                                }
+                                else
+                                {
+                                    throw new Exception("Zaten Bu Servise Bağlısınız");
+                                }
                             }
                             else
                             {

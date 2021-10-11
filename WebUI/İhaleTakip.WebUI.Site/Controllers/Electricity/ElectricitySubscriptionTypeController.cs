@@ -2,122 +2,205 @@
 {
     using İhaleTakip.Data;
     using İhaleTakip.Model;
+    using İhaleTakip.WebUI.Site.Managers;
     using Microsoft.AspNetCore.Mvc;
+    using System;
 
     public class ElectricitySubscriptionTypeController : Controller
     {
         ElectricitySubscriptionTypeData _electricitySubscriptionTypeData;
+        UserManager _userManager;
+        Service _service = Service.Electricity;
+        string _controllerName = "ElectricitySubscriptionType";
 
-        public ElectricitySubscriptionTypeController(ElectricitySubscriptionTypeData electricitySubscriptionTypeData)
+        public ElectricitySubscriptionTypeController(ElectricitySubscriptionTypeData electricitySubscriptionTypeData, UserManager userManager)
         {
-
+            _userManager = userManager;
             _electricitySubscriptionTypeData = electricitySubscriptionTypeData;
         }
 
         public ActionResult Index()
         {
-            
-
-            var electricitySubscriptionTypesResult = _electricitySubscriptionTypeData.GetAll();
-            if (!electricitySubscriptionTypesResult.IsSucced)
+            try
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = electricitySubscriptionTypesResult.Message });
+                Perm perm = _userManager.GetServicePerm(_service);
+                var electricitySubscriptionTypesResult = _electricitySubscriptionTypeData.GetAll();
+                if (!electricitySubscriptionTypesResult.IsSucced)
+                {
+                    return RedirectToAction("Index", "Eror", new { errorMessage = electricitySubscriptionTypesResult.Message });
+                }
+                ViewBag.ElectricitySubscriptionTypes = electricitySubscriptionTypesResult.Data;
+                return View($"~/Views/{_service}/{_controllerName}/{perm}/Index.cshtml");
             }
-            ViewBag.ElectricitySubscriptionTypes = electricitySubscriptionTypesResult.Data;
-            return View();
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Eror", new { errorMessage = ex.Message });
+            }
         }
 
         public ActionResult AddElectricitySubscriptionType()
         {
-            
-
-            return View();
+            try
+            {
+                Perm perm = _userManager.GetServicePerm(_service);
+                if (perm == Perm.Admin)
+                {
+                    return View($"~/Views/{_service}/{_controllerName}/{perm}/Add{_controllerName}.cshtml");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Sayfayı Görüntülemeye Yetkiniz Yetmiyor" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Eror", new { errorMessage = ex.Message });
+            }
         }
 
         public ActionResult UpdateElectricitySubscriptionType(int id)
         {
-            var selectedSubscriptionTypeResult = _electricitySubscriptionTypeData.GetByKey(id);
-            if (!selectedSubscriptionTypeResult.IsSucced)
+            try
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = selectedSubscriptionTypeResult.Message });
-            }
+                Perm perm = _userManager.GetServicePerm(_service);
+                if (perm == Perm.Admin)
+                {
+                    var selectedSubscriptionTypeResult = _electricitySubscriptionTypeData.GetByKey(id);
+                    if (!selectedSubscriptionTypeResult.IsSucced)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = selectedSubscriptionTypeResult.Message });
+                    }
 
-            if(selectedSubscriptionTypeResult.Data == null)
+                    if (selectedSubscriptionTypeResult.Data == null)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = "Var Olmayan Bir Abonelik Türünü Güncellemeye Çalıştınız" });
+                    }
+
+                    ViewBag.SelectedSubscriptionType = selectedSubscriptionTypeResult.Data;
+                    return View($"~/Views/{_service}/{_controllerName}/{perm}/Update{_controllerName}.cshtml");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Sayfayı Görüntülemeye Yetkiniz Yetmiyor" });
+                }
+            }
+            catch (Exception ex)
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = "Var Olmayan Bir Abonelik Türünü Güncellemeye Çalıştınız" });
+                return RedirectToAction("Index", "Eror", new { errorMessage = ex.Message });
             }
-
-            ViewBag.SelectedSubscriptionType = selectedSubscriptionTypeResult.Data;
-            return View();
         }
 
         public ActionResult DeleteElectricitySubscriptionType(int id)
         {
-            var checkResult = _electricitySubscriptionTypeData.GetByKey(id);
-            if (!checkResult.IsSucced)
+            try
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = checkResult.Message });
-            }
+                Perm perm = _userManager.GetServicePerm(_service);
+                if (perm == Perm.Admin)
+                {
+                    var checkResult = _electricitySubscriptionTypeData.GetByKey(id);
+                    if (!checkResult.IsSucced)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = checkResult.Message });
+                    }
 
-            if (checkResult.Data == null)
+                    if (checkResult.Data == null)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = "Var Olmayan Bir Abonelik Türünü Silmeye Çalıştınız" });
+                    }
+
+                    var result = _electricitySubscriptionTypeData.Delete(checkResult.Data);
+                    if (!result.IsSucced)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = checkResult.Message });
+                    }
+
+                    return RedirectToAction("Index", "ElectricitySubscriptionType");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Sayfayı Görüntülemeye Yetkiniz Yetmiyor" });
+                }
+            }
+            catch (Exception ex)
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = "Var Olmayan Bir Abonelik Türünü Silmeye Çalıştınız" });
+                return RedirectToAction("Index", "Eror", new { errorMessage = ex.Message });
             }
-
-            var result = _electricitySubscriptionTypeData.Delete(checkResult.Data);
-            if (!result.IsSucced)
-            {
-                return RedirectToAction("Index", "Eror", new { errorMessage = checkResult.Message });
-            }
-
-            return RedirectToAction("Index", "ElectricitySubscriptionType");
         }
 
         [HttpPost]
         public ActionResult AddElectricitySubscriptionType(ElectricitySubscriptionType electricitySubscriptionType)
         {
-            var checkResult = _electricitySubscriptionTypeData.FirstOrDefault(x => x.Name == electricitySubscriptionType.Name);
-            if (!checkResult.IsSucced)
+            try
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = checkResult.Message });
-            }
+                Perm perm = _userManager.GetServicePerm(_service);
+                if (perm == Perm.Admin)
+                {
+                    var checkResult = _electricitySubscriptionTypeData.FirstOrDefault(x => x.Name == electricitySubscriptionType.Name);
+                    if (!checkResult.IsSucced)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = checkResult.Message });
+                    }
 
-            if (checkResult.Data != null)
+                    if (checkResult.Data != null)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Abonelik Türü Zaten Kayıtlı" });
+                    }
+
+                    var result = _electricitySubscriptionTypeData.Insert(electricitySubscriptionType);
+                    if (!result.IsSucced)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = result.Message });
+                    }
+
+                    return RedirectToAction("Index", "ElectricitySubscriptionType");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Sayfayı Görüntülemeye Yetkiniz Yetmiyor" });
+                }
+            }
+            catch (Exception ex)
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Abonelik Türü Zaten Kayıtlı" });
+                return RedirectToAction("Index", "Eror", new { errorMessage = ex.Message });
             }
-
-            var result = _electricitySubscriptionTypeData.Insert(electricitySubscriptionType);
-            if (!result.IsSucced)
-            {
-                return RedirectToAction("Index", "Eror", new { errorMessage = result.Message });
-            }
-
-            return RedirectToAction("Index", "ElectricitySubscriptionType");
         }
         
         [HttpPost]
         public ActionResult UpdateElectricitySubscriptionType(ElectricitySubscriptionType electricitySubscriptionType)
         {
-            var checkResult = _electricitySubscriptionTypeData.FirstOrDefault(x => x.Name == electricitySubscriptionType.Name && x.Id != electricitySubscriptionType.Id);
-            if (!checkResult.IsSucced)
+            try
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = checkResult.Message });
-            }
+                Perm perm = _userManager.GetServicePerm(_service);
+                if (perm == Perm.Admin)
+                {
+                    var checkResult = _electricitySubscriptionTypeData.FirstOrDefault(x => x.Name == electricitySubscriptionType.Name && x.Id != electricitySubscriptionType.Id);
+                    if (!checkResult.IsSucced)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = checkResult.Message });
+                    }
 
-            if(checkResult.Data != null)
+                    if (checkResult.Data != null)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Abonelik Türü Zaten Kayıtlı" });
+                    }
+
+                    var result = _electricitySubscriptionTypeData.Update(electricitySubscriptionType);
+                    if (!result.IsSucced)
+                    {
+                        return RedirectToAction("Index", "Eror", new { errorMessage = result.Message });
+                    }
+
+                    return RedirectToAction("Index", "ElectricitySubscriptionType");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Sayfayı Görüntülemeye Yetkiniz Yetmiyor" });
+                }
+            }
+            catch (Exception ex)
             {
-                return RedirectToAction("Index", "Eror", new { errorMessage = "Bu Abonelik Türü Zaten Kayıtlı" });
+                return RedirectToAction("Index", "Eror", new { errorMessage = ex.Message });
             }
-
-            var result = _electricitySubscriptionTypeData.Update(electricitySubscriptionType);
-            if (!result.IsSucced)
-            {
-                return RedirectToAction("Index", "Eror", new { errorMessage = result.Message });
-            }
-
-
-            return RedirectToAction("Index", "ElectricitySubscriptionType");
         }
     }
 }

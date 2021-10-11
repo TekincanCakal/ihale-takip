@@ -76,35 +76,24 @@
 
         public void UpdateServiceStatus()
         {
-            string tempString = "";
-            foreach (var x in ServiceStatus)
+            foreach (var x in UserManager.ServiceLoginedUsers)
             {
-                string temp = "";
-                if (x.Value)
+                bool status = ServiceStatus[x.Value.Service];
+
+                var connections = OnlineAdminHub.ActiveUsers.GetConnections(x.Key);
+                if (!status)
                 {
-                    temp = $"<small class='me-2'><i class='fa fa-circle text-success' aria-hidden='true'></i> {x.Key} Yönetici</small>";
+                    foreach (var cid in connections)
+                    {
+                        _hubContext.Clients.Client(cid).SendAsync("updateService", $"<a class='text-decoration-none text-white' href='/ServisBaglan/{x.Value.Service}'>Yönetici Moduna Geçmek İçin Tıkla</a>");
+                    }
                 }
                 else
                 {
-                    temp = $"<small class='me-2'><i class='fa fa-circle text-danger' aria-hidden='true'></i> {x.Key} Yönetici</small>";
-                }
-                tempString += temp;
-            }
-
-            foreach (var x in UserManager.ServiceLoginedUsers)
-            {
-                OnlineAdminUser user;
-                OnlineAdminHub.ActiveUsers.TryGetValue(x.Key, out user);
-
-                IEnumerable<string> allReceivers;
-                lock (user.ConnectionIds)
-                {
-                    allReceivers = user.ConnectionIds.Concat(user.ConnectionIds);
-                }
-
-                foreach (var cid in allReceivers)
-                {
-                    _hubContext.Clients.Client(cid).SendAsync("updateService", tempString);
+                    foreach (var cid in connections)
+                    {
+                        _hubContext.Clients.Client(cid).SendAsync("updateService", "");
+                    }
                 }
             }
         }
