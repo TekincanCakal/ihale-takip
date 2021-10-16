@@ -20,10 +20,10 @@ C:\Users\Chasen\source\repos\İhaleTakip\İhaleTakip.Model\obj\Debug\netcoreapp3
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\bin\Debug\netcoreapp3.1\İhaleTakip.Model.deps.json
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\bin\Debug\netcoreapp3.1\İhaleTakip.Model.dll
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\bin\Debug\netcoreapp3.1\İhaleTakip.Model.pdb
-C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\obj\Debug\netcoreapp3.1\İhaleTakip.Model.csproj.AssemblyReference.cache
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\obj\Debug\netcoreapp3.1\İhaleTakip.Model.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\obj\Debug\netcoreapp3.1\İhaleTakip.Model.AssemblyInfoInputs.cache
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\obj\Debug\netcoreapp3.1\İhaleTakip.Model.AssemblyInfo.cs
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\obj\Debug\netcoreapp3.1\İhaleTakip.Model.csproj.CoreCompileInputs.cache
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\obj\Debug\netcoreapp3.1\İhaleTakip.Model.dll
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\obj\Debug\netcoreapp3.1\İhaleTakip.Model.pdb
+C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Model\obj\Debug\netcoreapp3.1\İhaleTakip.Model.csproj.AssemblyReference.cache

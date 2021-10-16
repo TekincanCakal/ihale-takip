@@ -7,15 +7,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJzza8DSVUUu6C5SmguxguwAAAAACAAAAAAAQZgAAAAEAACAAAAAFKb/D2FHANd1uiwHOnu8UVw0UvOCTktjh+nUa93yePwAAAAAOgAAAAAIAACAAAABk30XGMtO1Tf7eAG3qgVIJ1wkKhopZOC8LHLo5ierD6iAAAAD8Zfwxlz+vy2mvLHuO95NcJatMV+RY3Rj4ofh7HkTsJEAAAAC3kiyvVgxAmPqFu7Hlae3sv3Oz+P5pI0AArLJb3FBbj2mCYOUT25Xer2PLowb/kAz89+rQKUufUYiv77W2I0vj</EncryptedPassword>
-    <History>True|2021-10-10T12:06:58.8161913Z;True|2021-10-08T01:53:59.1329520+03:00;True|2021-10-08T01:25:29.2276343+03:00;True|2021-10-07T23:52:01.0638577+03:00;True|2021-10-07T23:29:36.5379191+03:00;True|2021-10-07T22:53:54.2143452+03:00;True|2021-10-07T22:43:54.2760919+03:00;True|2021-10-07T22:10:47.2660188+03:00;True|2021-10-07T21:06:19.1322949+03:00;False|2021-10-07T20:56:22.4958646+03:00;True|2021-10-07T20:49:57.6354617+03:00;True|2021-10-07T20:36:37.0561516+03:00;True|2021-10-07T20:19:27.5248861+03:00;True|2021-10-07T12:42:48.1340626+03:00;True|2021-10-06T20:30:54.4339681+03:00;True|2021-10-06T17:27:27.6098870+03:00;False|2021-10-06T17:20:24.2899968+03:00;</History>
+    <History>True|2021-10-11T17:29:42.9864055Z;True|2021-10-11T20:00:48.7698920+03:00;True|2021-10-10T15:06:58.8161913+03:00;True|2021-10-08T01:53:59.1329520+03:00;True|2021-10-08T01:25:29.2276343+03:00;True|2021-10-07T23:52:01.0638577+03:00;True|2021-10-07T23:29:36.5379191+03:00;True|2021-10-07T22:53:54.2143452+03:00;True|2021-10-07T22:43:54.2760919+03:00;True|2021-10-07T22:10:47.2660188+03:00;True|2021-10-07T21:06:19.1322949+03:00;False|2021-10-07T20:56:22.4958646+03:00;True|2021-10-07T20:49:57.6354617+03:00;True|2021-10-07T20:36:37.0561516+03:00;True|2021-10-07T20:19:27.5248861+03:00;True|2021-10-07T12:42:48.1340626+03:00;True|2021-10-06T20:30:54.4339681+03:00;True|2021-10-06T17:27:27.6098870+03:00;False|2021-10-06T17:20:24.2899968+03:00;</History>
     <_PublishTargetUrl>ftp://94.73.151.96/httpdocs</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>10/05/2021 16:49:13</publishTime>
+      <publishTime>10/10/2021 20:28:35</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>10/08/2021 14:06:45</publishTime>
+      <publishTime>10/10/2021 20:28:35</publishTime>
     </File>
     <File Include="BouncyCastle.Crypto.dll">
       <publishTime>05/28/2018 19:12:20</publishTime>
@@ -1029,403 +1029,403 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/02/2020 18:30:12</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/10/2021 14:59:35</publishTime>
+      <publishTime>10/16/2021 10:26:18</publishTime>
     </File>
     <File Include="wwwroot/_assets/css/bootstrap-select.min.css">
-      <publishTime>10/05/2021 10:44:16</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/css/bootstrap-table.min.css">
-      <publishTime>10/05/2021 10:44:16</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/css/bootstrap.min.css">
-      <publishTime>10/05/2021 10:44:16</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/css/font-awesome.min.css">
-      <publishTime>10/05/2021 10:44:17</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/css/jquery-ui.min.css">
-      <publishTime>10/05/2021 10:44:17</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/fonts/fontawesome-webfont.eot">
-      <publishTime>10/05/2021 10:44:33</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/fonts/fontawesome-webfont.svg">
-      <publishTime>10/05/2021 10:44:33</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/fonts/fontawesome-webfont.ttf">
-      <publishTime>10/05/2021 10:44:33</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/fonts/fontawesome-webfont.woff">
-      <publishTime>10/05/2021 10:44:33</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/fonts/fontawesome-webfont.woff2">
-      <publishTime>10/05/2021 10:44:33</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/fonts/FontAwesome.otf">
-      <publishTime>10/05/2021 10:44:33</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/images/emptyuser.png">
-      <publishTime>10/08/2021 10:16:36</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/images/logo.png">
-      <publishTime>10/05/2021 10:44:33</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/images/logo2.png">
-      <publishTime>10/05/2021 10:44:33</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/bootstrap-select.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/bootstrap-table-export.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/bootstrap-table.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/bootstrap.bundle.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/comma-numbers.js">
-      <publishTime>10/08/2021 16:02:29</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/jquery-3.6.0.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/jquery-ui.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/jspdf.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/jspdf.plugin.autotable.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-af-ZA.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-af-ZA.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ar-SA.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ar-SA.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-bg-BG.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-bg-BG.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ca-ES.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ca-ES.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-cs-CZ.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-cs-CZ.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-da-DK.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-da-DK.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-de-DE.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-de-DE.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-el-GR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-el-GR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-en-US.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-en-US.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-AR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-AR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-CL.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-CL.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-CR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-CR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-ES.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-ES.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-MX.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-MX.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-NI.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-NI.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-SP.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-es-SP.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-et-EE.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-et-EE.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-eu-EU.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-eu-EU.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fa-IR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fa-IR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fi-FI.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fi-FI.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fr-BE.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fr-BE.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fr-CH.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fr-CH.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fr-FR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fr-FR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fr-LU.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-fr-LU.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-he-IL.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-he-IL.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-hr-HR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-hr-HR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-hu-HU.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-hu-HU.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-id-ID.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-id-ID.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-it-IT.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-it-IT.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ja-JP.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ja-JP.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ka-GE.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ka-GE.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ko-KR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ko-KR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ms-MY.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ms-MY.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-nb-NO.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-nb-NO.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-nl-BE.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-nl-BE.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-nl-NL.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-nl-NL.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-pl-PL.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-pl-PL.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-pt-BR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-pt-BR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-pt-PT.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-pt-PT.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ro-RO.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ro-RO.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ru-RU.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ru-RU.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-sk-SK.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-sk-SK.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-sr-Cyrl-RS.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-sr-Cyrl-RS.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-sr-Latn-RS.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-sr-Latn-RS.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-sv-SE.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-sv-SE.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-th-TH.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-th-TH.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-tr-TR.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-tr-TR.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-uk-UA.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-uk-UA.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ur-PK.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-ur-PK.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-uz-Latn-UZ.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-uz-Latn-UZ.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-vi-VN.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-vi-VN.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-zh-CN.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-zh-CN.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-zh-TW.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/locale/bootstrap-table-zh-TW.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/online-admin-hub.js">
-      <publishTime>10/10/2021 14:58:30</publishTime>
+      <publishTime>10/11/2021 17:29:57</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/signalr.min.js">
-      <publishTime>08/24/2021 20:59:26</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="wwwroot/_assets/js/tableExport.min.js">
-      <publishTime>10/05/2021 10:44:38</publishTime>
+      <publishTime>10/10/2021 20:28:36</publishTime>
     </File>
     <File Include="zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll">
       <publishTime>08/15/2019 02:21:24</publishTime>
@@ -1443,16 +1443,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/02/2020 18:30:12</publishTime>
     </File>
     <File Include="İhaleTakip.Data.dll">
-      <publishTime>10/10/2021 14:59:26</publishTime>
+      <publishTime>10/16/2021 10:08:49</publishTime>
     </File>
     <File Include="İhaleTakip.Data.pdb">
-      <publishTime>10/10/2021 14:59:26</publishTime>
+      <publishTime>10/16/2021 10:08:49</publishTime>
     </File>
     <File Include="İhaleTakip.Model.dll">
-      <publishTime>10/10/2021 14:59:25</publishTime>
+      <publishTime>10/11/2021 19:52:21</publishTime>
     </File>
     <File Include="İhaleTakip.Model.pdb">
-      <publishTime>10/10/2021 14:59:25</publishTime>
+      <publishTime>10/11/2021 19:52:21</publishTime>
     </File>
     <File Include="İhaleTakip.WebUI.Infrastructure.dll">
       <publishTime>10/07/2021 20:14:54</publishTime>
@@ -1461,25 +1461,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/07/2021 20:14:54</publishTime>
     </File>
     <File Include="İhaleTakip.WebUI.Site.deps.json">
-      <publishTime>10/10/2021 14:59:28</publishTime>
+      <publishTime>10/16/2021 10:26:18</publishTime>
     </File>
     <File Include="İhaleTakip.WebUI.Site.dll">
-      <publishTime>10/10/2021 14:59:27</publishTime>
+      <publishTime>10/16/2021 10:26:17</publishTime>
     </File>
     <File Include="İhaleTakip.WebUI.Site.exe">
-      <publishTime>10/10/2021 14:59:27</publishTime>
+      <publishTime>10/16/2021 10:26:17</publishTime>
     </File>
     <File Include="İhaleTakip.WebUI.Site.pdb">
-      <publishTime>10/10/2021 14:59:27</publishTime>
+      <publishTime>10/16/2021 10:26:17</publishTime>
     </File>
     <File Include="İhaleTakip.WebUI.Site.runtimeconfig.json">
-      <publishTime>10/10/2021 14:59:28</publishTime>
+      <publishTime>10/11/2021 19:52:27</publishTime>
     </File>
     <File Include="İhaleTakip.WebUI.Site.Views.dll">
-      <publishTime>10/10/2021 14:59:28</publishTime>
+      <publishTime>10/16/2021 10:26:18</publishTime>
     </File>
     <File Include="İhaleTakip.WebUI.Site.Views.pdb">
-      <publishTime>10/10/2021 14:59:28</publishTime>
+      <publishTime>10/16/2021 10:26:18</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -88,13 +88,6 @@
                         _hubContext.Clients.Client(cid).SendAsync("updateService", $"<a class='text-decoration-none text-white' href='/ServisBaglan/{x.Value.Service}'>Yönetici Moduna Geçmek İçin Tıkla</a>");
                     }
                 }
-                else
-                {
-                    foreach (var cid in connections)
-                    {
-                        _hubContext.Clients.Client(cid).SendAsync("updateService", "");
-                    }
-                }
             }
         }
     }

@@ -33,6 +33,5 @@ C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreap
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.AssemblyInfoInputs.cache
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.AssemblyInfo.cs
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.csproj.CoreCompileInputs.cache
-C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.csproj.CopyComplete
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.dll
 C:\Users\yukse\Documents\GitHub\ihale-takip\İhaleTakip.Data\obj\Debug\netcoreapp3.1\İhaleTakip.Data.pdb

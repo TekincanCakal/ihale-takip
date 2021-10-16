@@ -1200,3 +1200,4 @@ C:\Users\yukse\Documents\GitHub\ihale-takip\WebUI\İhaleTakip.WebUI.Site\obj\Deb
 C:\Users\yukse\Documents\GitHub\ihale-takip\WebUI\İhaleTakip.WebUI.Site\obj\Debug\netcoreapp3.1\Razor\Views\Electricity\ElectricityUnitPrice\Admin\Index.cshtml.g.cs
 C:\Users\yukse\Documents\GitHub\ihale-takip\WebUI\İhaleTakip.WebUI.Site\obj\Debug\netcoreapp3.1\Razor\Views\Electricity\ElectricityUnitPrice\Admin\UpdateElectricityUnitPrice.cshtml.g.cs
 C:\Users\yukse\Documents\GitHub\ihale-takip\WebUI\İhaleTakip.WebUI.Site\obj\Debug\netcoreapp3.1\Razor\Views\Electricity\ElectricityUnitPrice\Observer\Index.cshtml.g.cs
+C:\Users\yukse\Documents\GitHub\ihale-takip\WebUI\İhaleTakip.WebUI.Site\obj\Debug\netcoreapp3.1\Razor\Views\Electricity\ElectricitySubscriber\Admin\Index.cshtml.g.cs
